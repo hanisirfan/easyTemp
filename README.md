@@ -1,6 +1,8 @@
 ﻿
 # This project is still under development.
-    Todo: Make installation script
+    Todo: 
+    - Make installation script.
+    - Better UI especially for desktop experience.
 # easyTemp
 This is just a simple web app that you can use to record student temperature for any locations in your institute.
 
