@@ -87,7 +87,7 @@ stuse::template('header');
         </div>
         <script src="' . stuse::js('time') . '"></script>
         <script src="' . stuse::js('scan') . '"></script>
-        <script src="' . stuse::js('quagga') . '"></script>
+        <script src="' . stuse::js('quagga.min') . '"></script>
         <script src="' . stuse::js('barcode') . '"></script>
     </div>';
     }

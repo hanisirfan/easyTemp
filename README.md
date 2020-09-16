@@ -1,15 +1,17 @@
 ﻿
+# This project is still under development.
+    Todo: Make installation script
 # easyTemp
 This is just a simple web app that you can use to record student temperature for any locations in your institute.
 
 ## Features
 - #### Ability to add:
-    - Locations
-    - Students
-    - Users
-    - Entry/Exit Record  
-    - Records can be added by searching students data based on manual input of their identification number or by barcode on their student card.
-    - Users Roles and Permissions
+    ##### - Locations
+    ##### - Students
+    ##### - Users
+    ##### - Entry/Exit Record  
+    ##### - Records can be added by searching students data based on manual input of their identification number or by barcode on their student card.
+    ##### - Users Roles and Permissions
     Moderators only have the access to add records of entry and exit.
     Admins can view the entire app including downloading the PDF version of users entry/exit report.
 
