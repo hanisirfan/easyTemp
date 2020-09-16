@@ -1,0 +1,392 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scrollbar-color: #4C5B61 #C5C5C5;
+    scrollbar-width: thin;
+    scroll-behavior: smooth
+}
+
+body{
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #829191;
+    display: flex;
+    flex-direction: column;
+}
+
+.home ul{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    flex-direction: column;
+}
+
+.home ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.home ul li a{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    background-color: #2C423F; 
+    border-radius: 1vw;
+}
+
+.home ul li a img{
+    width: 15vw;
+    height: 10vh;
+}
+
+.dashboard-list{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 20vh;
+    text-align: center;
+}
+
+.dashboard-list h1{
+    margin: 2.5vh;
+    color: #C5C5C5;
+    font-size: 6vw;
+}
+
+.dashboard-list-table-wrapper{
+    width: 90vw;
+    min-height: 10vh;
+    overflow-y: scroll;
+    margin: 3vh 0;
+    -webkit-box-shadow: 10px 12px 17px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 12px 17px -8px rgba(0,0,0,0.75);
+    box-shadow: 10px 12px 17px -8px rgba(0,0,0,0.75);
+    scrollbar-color: #4C5B61 #C5C5C5;
+    scrollbar-width: thin;
+    scroll-behavior: smooth
+}
+
+.dashboard-list table{
+    background-color: #1C2A28;
+    width: 100%;
+    height: 100%;
+    font-size: 2vw;
+    border-spacing: 1vw;
+    color: #C5C5C5;
+}
+
+.dashboard-list table th{
+    color: #C5C5C5;
+    font-weight: bold;
+    height: 8vh;
+    font-size: 3vw;
+    background-color: #2C423F;
+}
+
+.dashboard-list table td{
+    font-size: 2.5vw;
+    height: 3vh;
+}
+
+.dashboard-list table td a{
+    text-decoration: none;
+    display: block;
+    color: #C5C5C5;
+    font-style: italic;
+}
+
+.dashboard-list table td a:hover{
+    font-weight: bold;
+}
+
+
+.dashboard-list table tr:nth-child(odd){
+    background-color: #4C5B61;
+}
+
+.dashboard-list table tr:nth-child(even){
+    background-color: none;
+}
+
+.dashbord-delete{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10vh 0;
+    width: 100vw;
+    height: 80vh;
+}
+
+.dashbord-delete p{
+    font-size: 5vw;
+    color: #C5C5C5;
+}
+
+.dashbord-delete form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+}
+
+.dashbord-delete form select,.dashbord-delete form button{
+    text-align: center;
+    font-size: 3vw;
+    width: 80%;
+    height: 25%;
+    border-radius: 2vw;
+    border: none;
+}
+
+.dashboard-edit{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20vh 0;
+    width: 100vw;
+    height: 60vh;
+}
+
+.dashboard-edit p{
+    font-size: 5vw;
+    color: #C5C5C5;
+}
+
+.dashboard-edit form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+}
+
+.dashboard-edit form button,.dashboard-edit-input{
+    text-align: center;
+    font-size: 3vw;
+    width: 100%;
+    height: 15%;
+    border-radius: 2vw;
+    border: none;
+}
+
+.dashboard-add{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-add p{
+    margin: 5vh 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    font-size: 6vw;
+    font-weight: bold;
+    color: #C5C5C5;
+    text-align: center;
+}
+
+.dashboard-add form{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2vh 0;
+}
+
+.dashboard-add input,.dashboard-add button,.dashboard-add form select, .dashboard-add ul{
+    text-align: center;
+    font-size: 3vw;
+    width: 90%;
+    height: 10%;
+    border-radius: 2vw;
+    border: none;
+}
+
+#password-complexity{
+    font-size: 2.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1vh 0;
+}
+
+.dashboard-input{
+    opacity: 0%;
+    width: 0vw;
+    height: 0vh;
+}
+
+.dashboard-add-error{
+    width: 50vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #C5C5C5;
+    font-weight: bold;
+    
+    margin: 10vh 0 0 0;
+}
+
+.dashboard-add-error p{
+    height: 100%;
+    width: 100%;
+    background-color: #2C423F;
+    font-size: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-user-login{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dashboard-user-login h1{
+    height: 20%;
+    width: 100%;
+    color: #C5C5C5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vw;
+}
+
+.dashboard-user-login-error{
+    height: 10%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2C423F;
+    border-radius: 2vw;
+    font-size: 3vw;
+    color: #C5C5C5;
+}
+
+.dashboard-user-login form{
+    width: 90%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1C2A28;
+    border-radius: 2vw;
+}
+
+.dashboard-user-login input, .dashboard-user-login button{
+    text-align: center;
+    font-size: 3vw;
+    width: 90%;
+    height: 10%;
+    border-radius: 2vw;
+    border: none;
+}
+
+.login-status{
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    font-size: 6vw;
+    text-align: center;
+    background-color: #829191;
+    color: #C5C5C5;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login-status a{
+    display: block;
+    padding: 2vh 2vw;
+    background-color: #2C423F;
+    text-decoration: none;
+    font-size: 4vw;
+    border-radius: 2vw;
+    color: #C5C5C5;
+    margin: 2vh 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .dashboard-list h1{
+        font-size: 3vw;
+    }
+    .dashboard-list-table-wrapper{
+        width: 70%;
+    }
+    .dashboard-list table th{
+        font-size: 2vw;
+    }
+    .dashboard-list table td{
+        font-size: 1.8vw;
+    }
+    .dashboard-add p{
+        font-size: 3vw;
+    }
+    .dashboard-add input,.dashboard-add button,.dashboard-add form select{
+        width: 60%;
+        height: 12%;
+        font-size: 1.8vw;
+    }
+    #password-complexity{
+        font-size: 1vw;
+    }
+    .dashbord-delete p{
+        font-size: 2.2vw;
+    }
+    .dashbord-delete form select, .dashbord-delete form button{
+        width: 50%;
+        height: 15%;
+        font-size: 1.8vw;
+    }
+    .dashboard-edit p{
+        font-size: 2.2vw;
+    }
+    .dashboard-edit form button, .dashboard-edit-input{
+        width: 50%;
+        height: 15%;
+        font-size: 1.8vw;
+    }
+    .home ul{
+        flex-direction: row;
+    }
+}

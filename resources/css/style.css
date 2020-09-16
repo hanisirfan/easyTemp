@@ -1,0 +1,835 @@
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    scrollbar-color: #4C5B61 #C5C5C5;
+    scrollbar-width: thin;
+    scroll-behavior: smooth
+}
+
+body{
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+/* Desktop First Layout..Or mobile..idk what I'm even doing rn..Ok mobile first now xd*/
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #829191;
+    color: #C5C5C5;
+    display: flex;
+    flex-direction: column;
+    font-size: 1vw;
+}
+
+.section{
+    width: 100vw;
+    min-height: 1vh;
+    overflow-x: hidden;
+}
+
+.hamburger-menu{
+    position: fixed;
+    top: 2vh;
+    left: 2vw;
+    width: 10vw;
+    height: 5vh;
+    background-color: #4C5B61;
+    z-index: 1001;
+    border-radius: 2.3vw;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hamburger-lines{
+    width: 80%;
+    height: 10%;
+    background-color: whitesmoke;
+    border-radius: 1vw;
+}
+
+.header{
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    position: fixed;
+    left: -100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 5vw;
+    background-color: #4C5B61;
+    color: #C5C5C5;
+    transition: left 0.5s ease-in-out;
+}
+
+.header-title{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-title a{
+    text-decoration: none;
+    color: #C5C5C5;
+    font-size: 10vw;
+    font-weight: bold;
+    display: block;
+}
+
+.user{
+    display: flex;
+    width: 100%;
+    height: 20%;
+    margin: 1vh 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2.5vw;
+}
+
+.user-logged-out a{
+    display: block;
+    padding: 3vh 3vw;
+    background-color: #2C423F;
+    color: #C5C5C5;
+    text-decoration: none;
+    font-size: 3vw;
+    border-radius: 3vw;
+}
+
+.user-logged-in{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.user-logged-in p{
+    font-size: 3.5vw;
+    margin: 1vh 0;
+}
+
+.user-logged-in button{
+    display: block;
+    padding: 3vh 3vw;
+    background-color: #2C423F;
+    color: #C5C5C5;
+    text-decoration: none;
+    font-size: 3vw;
+    border-radius: 3vw;
+    border: none;
+}
+
+nav{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+nav ul{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #C5C5C5;
+    display: block;
+}
+
+nav ul li a:hover{
+    font-weight: bold;
+    font-style: italic;
+}
+
+.header-visible{
+    left: 0;
+}
+
+.footer{
+    width: 100vw;
+    min-height: 10vh;
+    background-color: #4C5B61;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden;
+    z-index: 1000;
+}
+
+.footer a{
+    font-size: 1.6vw;
+    font-style: italic;
+    font-weight: bold;
+    color: #C5C5C5;
+    text-decoration: none;
+}
+
+.footer p{
+    font-size: 2vw;
+}
+
+.homepage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.homepage h1{
+    font-size: 5vw;
+    color: #C5C5C5;
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepage ul{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.homepage ul li{
+    list-style: none;
+}
+
+.homepage ul li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2vw;
+    font-size: 4vw;
+    width: 30vw;
+    height: 10vh;
+    background-color: #1C2A28;
+    color: #C5C5C5;
+    text-decoration: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+/* https://stackoverflow.com/questions/3790935/can-i-hide-the-html5-number-input-s-spin-box */
+/* Begin Page Section Styles */
+.scan-active{
+    transform: translateX(0vw) !important;
+}
+
+.scan-inactive{
+    transform: translateX(-100vw);
+}
+
+.scan-back-btn{
+    padding: 2.5vh 3vw;
+    background-color: #A1AFB5;
+    color: #2C423F;
+    border-radius: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 12vh;
+    left: 3vw;
+    cursor: pointer;
+}
+
+.scan-back-btn p{
+    display: block;
+    font-size: 2.5vw;
+}
+
+.scan-back-btn-2{
+    width: 10vw;
+    height: 5vh;
+    background-color: #A1AFB5;
+    color: #2C423F;
+    border-radius: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 12vh;
+    left: 2.5vw;
+    cursor: pointer;
+}
+
+.scan-back-btn-2 p{
+    display: block;
+    font-size: 2.5vw;
+}
+
+.scan-page-index{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 80vh;
+    overflow: hidden;
+    margin-top: 10vh;
+    position: relative;
+}
+
+.scan-choose{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    position: absolute;
+    top: 0vh;
+    left: 0vw;
+    transition: transform 1s;
+}
+
+.scan-choose ul{
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.scan-choose ul li{
+    list-style: none;
+    width: 20vw;
+    height: 10vh;
+    background-color: #2C423F;
+    border-radius: 3vw;
+    cursor: pointer;
+}
+
+.scan-choose ul li img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 1vw;
+}
+
+.scan-manual{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    position: absolute;
+    top: 0vh;
+    left: 0vw;
+    transform: translateX(200vw);
+    transition: transform 1s;
+}
+
+.scan-manual form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.scan-manual form input{
+    border: none;
+    border-radius: 10px;
+    width: 70%;
+    height: 15%;
+    text-align: center;
+}
+
+.scan-manual form button{
+    border: none;
+    border-radius: 10px;
+    width: 70%;
+    height: 15%;
+    text-align: center;
+}
+
+.scan-manual form h1{
+    font-size: 4vw;
+}
+
+.scan-barcode{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    position: absolute;
+    top: 0vh;
+    left: 0vw;
+    transform: translateX(200vw);
+    transition: transform 1s;
+}
+
+.scan-camera{
+    width: 80vw;
+    height: 50vh;
+}
+
+.scan-detected-identification{
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.scan-detected-identification input{
+    width: 35%;
+    height: 30%;
+    border-radius: 1vw;
+    border: none;
+    text-align: center;
+}
+
+.location-status{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 10vh;
+}
+
+.location-status select{
+    width: 35%;
+    height: 4vh;
+    border-radius: 1vw;
+    border: none;
+    text-align: center;
+}
+
+.scan-page-verify{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.scan-scan-err{
+    width: 50vw;
+    height: 20vh;
+    background-color: #262E31;
+    color: #C5C5C5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 1vw;
+}
+
+.scan-scan-err{
+    font-size: 2.8vw;
+    font-weight: bold;
+}
+
+.scan-scan-err a{
+    text-decoration: none;
+    color: #C5C5C5;
+    display: block;
+    background-color: #829191;
+    width: 50%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vw;
+}
+
+.scan-page-verify-item-container{
+    width: 90vw;
+    height: 90vh;
+    border-radius: 1vw;
+    display: flex;
+    margin: 10vh;
+    flex-direction: column;
+}
+
+.scan-page-verify-details{
+    width: 100%;
+    height: 70vh;
+    background-color: #2C423F;
+    border-radius: 1vw 1vw 0 0;
+    text-align: center;
+    padding: 1.5vw;
+}
+
+.scan-page-verify-details h1{
+    font-size: 3vw;
+}
+
+.scan-page-verify-details p{
+    font-size: 2vw;
+}
+
+.scan-page-verify-details table{
+    width: 100%;
+    height: 100%;
+}
+
+.scan-page-verify-details th, .scan-page-verify-details td{
+    border-radius: 1vw;
+}
+
+.verify-details-header{
+    height: 5%;
+}
+
+.verify-status-row{
+    height: 5vh;
+    font-size: 2.5vw;
+}
+
+.verify-status-row td{
+    background-color: #949B96;
+    color: black;
+}
+
+.verify-status-row th{
+    background-color: #262E31;
+}
+
+.verify-status-column-header th{
+    background-color: #262E31;
+}
+
+.verify-status-column-data td{
+    background-color: #949B96;
+    color: black;
+    height: 20%;
+    font-size: 2.5vw;
+}
+.verify-status-column-data p{
+    font-size: 2.5vw;
+}
+
+#temperature{
+    width: 100%;
+    height: 15vh;
+    font-size: 4vw;
+    text-align: center;
+    background-color: #949B96;
+    border: none;
+    color: black;
+}
+
+.scan-page-verify-confirm{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #262E31;
+    border-radius: 0 0 1vw 1vw;
+    cursor: pointer;
+    color: whitesmoke;
+    font-size: 4vw;
+    border: none;
+}
+
+.scan-page-verify-confirm input::-webkit-input-placeholder{
+    font-size: 1vw;
+}
+
+.verify-info-input{
+    pointer-events: none;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    font-size: 2.5vw;
+}
+
+.scan-success{
+    margin: 10vh 0 0 0;
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.scan-success-container{
+    width: 80%;
+    height: 50%;
+    background-color: #262E31;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 2vw;
+}
+
+.scan-success-container h1{
+    color: #C5C5C5;
+    font-size: 5vw;
+}
+
+.scan-success-option{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 50%;
+}
+
+.scan-success-option div{
+    width: 40%;
+    height: 35%;
+    background-color: #4C5B61;
+    border-radius: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scan-success-option a{
+    font-size: 3.5vw;
+    color: #C5C5C5;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5vw;
+}
+
+.report-view{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    border-spacing: 0;
+}
+
+.view-title{
+    text-align: center;
+    margin: 2vh;
+}
+
+.view-title h1{
+    font-size: 4vw;
+}
+
+.view-location{
+    font-size: 3vw;
+}
+
+.view-date{
+    font-size: 3vw;
+}
+
+.view-disclaimer{
+    font-size: 3vw;
+    font-style: italic;
+}
+
+.report-view-table{
+    /* If I want to use box shadow maybe just copy from here */
+    -webkit-box-shadow: 10px 12px 17px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 12px 17px -8px rgba(0,0,0,0.75);
+    box-shadow: 10px 12px 17px -8px rgba(0,0,0,0.75);
+    margin: 1vh;
+    background-color: #1C2A28;
+    width: 95vw;
+    max-height: 80vh;
+    border-spacing: 1vw;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+.report-view-table th{
+    font-size: 3vw;
+    background-color: #2C423F;
+    height: 5vh;
+}
+
+.report-view-table td{
+    font-size: 2.5vw;
+    height: 3vh;
+}
+
+.report-view-table tr:nth-child(even){
+    background-color: #4C5B61;
+}
+
+.report-view-table tr:nth-child(odd){
+    background-color: none;
+}
+
+.report-view-error{
+    background-color: #2C423F;
+    padding: 25vh 25vw;
+    display: flex;
+    margin: 10vh;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vw;
+    text-align: center;
+}
+
+.report-selection{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.report-selection form{
+    background-color: #2C423F;
+    width: 80%;
+    height: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    font-size: 2vw;
+    border-radius: 3vw;
+    -webkit-box-shadow: 10px 12px 17px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 12px 17px -8px rgba(0,0,0,0.75);
+    box-shadow: 10px 12px 17px -8px rgba(0,0,0,0.75);
+}
+
+.report-selection input, .report-selection select, .report-selection button{
+    width: 35%;
+    height: 15%;
+    text-align: center;
+    border-radius: 2vw;
+    font-size: 2vw;
+}
+
+.report-selection-option{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.report-selection-option a{
+    text-decoration: none;
+    display: block;
+    padding: 5vh 5vw;
+    background-color: #2C423F;
+    font-size: 3.3vw;
+    font-weight: bold;
+    color: #C5C5C5;
+    border-radius: 2.4vw;
+}
+
+/* Desktop View*/
+@media only screen and (min-width: 768px) {
+    .hamburger-menu{
+        width: 4vw;
+        height: 6vh;
+        border-radius: 1vw;
+    }
+    .header a{
+        font-size: 2.5vw;
+    }
+    .header-title a{
+        font-size: 4vw;
+    }
+    header nav ul li a{
+        font-size: 3vw;
+    }
+    .scan-manual form input,.scan-manual form button{
+        font-size: 1.5vw;
+    }
+    .scan-page-verify-item-container{
+        width: 50%;
+        height: 100%;
+        margin: 2.5vh 0;
+    }
+    .scan-page-verify-details h1{
+        font-size: 2vw;
+    }
+    .verify-status-column-data p,.verify-info-input{
+        font-size: 1.5vw;
+    }
+    #temperature{
+        font-size: 1.8vw;
+    }
+    .scan-page-verify-confirm{
+        font-size: 2vw;
+    }
+    .scan-success-container h1{
+        font-size: 2vw;
+    }
+    .scan-success-container a{
+        font-size: 1.8vw;
+    }
+    .location-status select{
+        font-size: 1.5vw;
+    }
+    .report-selection-option a{
+        font-size: 2vw;
+    }
+    .view-title h1,.view-title p{
+        font-size: 1.8vw;
+    }
+    .report-view-table{
+        width: 70%;
+    }
+    .report-view-table th{
+        font-size: 1.5vw;
+    }
+    .report-view-table td{
+        font-size: 1.3vw;
+    }
+}
