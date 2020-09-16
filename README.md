@@ -17,7 +17,7 @@ This is just a simple web app that you can use to record student temperature for
 - A web server (Apache2, Nginx etc)
 - PHP 7.4.8 and above
 - Self-signed certificate or CA signed certificates if you plan to host this app to be accessible elsewhere.
-getUserMedia() is a powerful feature which can only be used in secure contexts; in insecure contexts, navigator.mediaDevices is undefined, preventing access to [getuserMedia()](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia).
+*getUserMedia() is a powerful feature which can only be used in secure contexts; in insecure contexts, navigator.mediaDevices is undefined, preventing access to [getuserMedia()](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia).*
 
 ##	Installation
 - Move all the files into your `htdocs` folder or your server directory.
