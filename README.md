@@ -1,4 +1,4 @@
-﻿
+﻿[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)]
 # This project is still under development.
     Todo: 
     - Make installation script.
