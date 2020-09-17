@@ -14,7 +14,7 @@ stuse::template('dashboard/header');
             unset($_SESSION['error']);
         }
     ?>
-    <form action="/includes/dashboard-handler.php" method="POST">
+    <form action="<?php echo APP_URL?>/includes/dashboard-handler.php" method="POST">
         <input type="hidden" name="type" value="user" class="dashboard-input">
         <input type="hidden" name="login" class="dashboard-input">
         <input type="text" name="username" id="username" placeholder="NAMA PENGGUNA (USERNAME)" required>

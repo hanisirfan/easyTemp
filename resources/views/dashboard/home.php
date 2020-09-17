@@ -8,19 +8,19 @@ stuse::template('dashboard/header');
     if(!isset($_SESSION['username'])){
         echo '<div class="login-status">
                 <p>SILA LOG MASUK</p>
-                <a href="/dashboard/user/login">LOG MASUK</a>
+                <a href="' . APP_URL . '/dashboard/user/login">LOG MASUK</a>
             </div>';
     }elseif($_SESSION['urole'] != 1){
         echo '<div class="login-status">
             <p>ANDA TIADA AKSES PADA HALAMAN INI</p>
-            <a href="/">KEMBALI KE LAMAN UTAMA</a>
+            <a href="' . APP_URL .'">KEMBALI KE LAMAN UTAMA</a>
         </div>';
     }else{
         echo '<div class="home">
                 <ul>
-                <li><a href="/dashboard/student"><img src="' . stuse::imgSVG('student') . '" alt=""></a></li>
-                <li><a href="/dashboard/location"><img src="' . stuse::imgSVG('location') . '" alt=""></a></li>
-                <li><a href="/dashboard/user"><img src="' . stuse::imgSVG('user') . '" alt=""></a></li>
+                <li><a href="' . APP_URL .'/dashboard/student"><img src="' . stuse::imgSVG('student') . '" alt=""></a></li>
+                <li><a href="' . APP_URL . '/dashboard/location"><img src="' . stuse::imgSVG('location') . '" alt=""></a></li>
+                <li><a href="' . APP_URL .'/dashboard/user"><img src="' . stuse::imgSVG('user') . '" alt=""></a></li>
                 </ul>
             </div>';
     }

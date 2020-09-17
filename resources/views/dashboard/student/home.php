@@ -9,12 +9,12 @@ stuse::template('dashboard/header');
     if(!isset($_SESSION['username'])){
         echo '<div class="login-status">
                 <p>SILA LOG MASUK</p>
-                <a href="/dashboard/user/login">LOG MASUK</a>
+                <a href="' . APP_URL . '/dashboard/user/login">LOG MASUK</a>
             </div>';
     }elseif($_SESSION['urole'] != 1){
         echo '<div class="login-status">
             <p>ANDA TIADA AKSES PADA HALAMAN INI</p>
-            <a href="/">KEMBALI KE LAMAN UTAMA</a>
+            <a href="' . APP_URL .'">KEMBALI KE LAMAN UTAMA</a>
         </div>';
     }else{
         echo '<div class="dashboard-list">
@@ -55,7 +55,7 @@ stuse::template('dashboard/header');
                             }
             echo '
                     <p>TAMBAH PELAJAR</p>
-                    <form action="/includes/dashboard-handler.php" method="POST">
+                    <form action="' . APP_URL .'/includes/dashboard-handler.php" method="POST">
                         <input type="hidden" name="type" value="student" class="dashboard-input">
                         <input type="hidden" name="add" class="dashboard-input">
                         <input type="text" name="id" id="" placeholder="NO KAD PENGENALAN" inputmode="numeric" required>

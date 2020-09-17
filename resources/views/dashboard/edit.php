@@ -13,12 +13,12 @@ Method (1=edit,2=delete,3=add)
 if(!isset($_SESSION['username'])){
     echo '<div class="login-status">
             <p>SILA LOG MASUK</p>
-            <a href="/dashboard/user/login">LOG MASUK</a>
+            <a href="' . APP_URL .'/dashboard/user/login">LOG MASUK</a>
         </div>';
 }elseif($_SESSION['urole'] != 1){
     echo '<div class="login-status">
         <p>ANDA TIADA AKSES PADA HALAMAN INI</p>
-        <a href="/">KEMBALI KE LAMAN UTAMA</a>
+        <a href="' . APP_URL .'">KEMBALI KE LAMAN UTAMA</a>
     </div>';
 }else{
     if(!isset($_GET['type']) || !isset($_GET['id']) || !isset($_GET['method'])){
@@ -64,7 +64,7 @@ if(!isset($_SESSION['username'])){
             echo '<div class="dashboard-edit">
                     <p>SUNTING LOKASI INI</p>
                     <p>ID: '. $location['id'] . '</p>
-                    <form action="/includes/dashboard-handler.php" method="POST"> 
+                    <form action="' . APP_URL .'/includes/dashboard-handler.php" method="POST"> 
                         <input type="hidden" name="type" value="location" class="dashboard-input">
                         <input type="hidden" name="id" value="' . $_GET['id'] . '" class="dashboard-input">
                         <input type="hidden" name="edit" value="" class="dashboard-input">

@@ -9,15 +9,18 @@ stuse::template('header');
     if(!isset($_SESSION['username'])){
         echo '<div class="login-status">
                 <p>SILA LOG MASUK</p>
-                <a href="/dashboard/user/login">LOG MASUK</a>
+                <a href="' . APP_URL .'/dashboard/user/login">LOG MASUK</a>
             </div>';
     }elseif(!isset($_SESSION['urole'])){
         echo '<div class="login-status">
             <p>ANDA TIADA AKSES PADA HALAMAN INI</p>
-            <a href="/">KEMBALI KE LAMAN UTAMA</a>
+            <a href="'. APP_URL . '">KEMBALI KE LAMAN UTAMA</a>
         </div>';
     }else{
-        echo '<div class="section scan-page-verify">';
+        if(!isset($_POST['location'])){
+            header('Location: ' . APP_URL);
+        }else{
+            echo '<div class="section scan-page-verify">';
             $stmt = $pdo->prepare('SELECT name FROM students WHERE icNo = ? LIMIT 1');
             $identification = $_POST['identification'];
             $stmt->execute([$identification]);
@@ -31,7 +34,7 @@ stuse::template('header');
             }
         echo '
             <div class="scan-page-verify-item-container">
-                <form action="/includes/scan-verify-handler.php" method="POST">
+                <form action="' . APP_URL .'/includes/scan-verify-handler.php" method="POST">
                     <div class="scan-page-verify-details">
                         <table>
                             <tr class="verify-status-column-header">
@@ -94,5 +97,6 @@ stuse::template('header');
                 </script>
             </div>
         </div>';
+        }
     }
 ?>

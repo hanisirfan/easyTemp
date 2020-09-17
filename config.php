@@ -4,8 +4,8 @@ $APP_NAME = 'easyTemp';
 $APP_AUTHOR = 'Muhammad Hanis Irfan';
 $APP_VERSION = '0.9';
 //BOTH DOESN'T NEED SLASHES IN THE END. HTTPS IS MUST
-$APP_URL = 'https://192.168.8.104';
-$APP_URL_ALT = 'https://192.168.8.104';
+$APP_URL = 'https://localhost/easytemp';
+$APP_URL_ALT = 'https://localhost/easytemp';
 $APP_URL_LOCAL = __DIR__;
 
 //MYSQL DATABASE CONFIG

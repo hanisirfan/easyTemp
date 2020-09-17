@@ -9,12 +9,12 @@ stuse::template('header');
     if(!isset($_SESSION['username'])){
         echo '<div class="login-status">
                     <p>SILA LOG MASUK</p>
-                    <a href="/dashboard/user/login">LOG MASUK</a>
+                    <a href="' . APP_URL . '/dashboard/user/login">LOG MASUK</a>
                 </div>';
     }elseif($_SESSION['urole'] != 1){
         echo '<div class="login-status">
             <p>ANDA TIADA AKSES PADA HALAMAN INI</p>
-            <a href="/">KEMBALI KE LAMAN UTAMA</a>
+            <a href="' . APP_URL . '">KEMBALI KE LAMAN UTAMA</a>
         </div>';
     }else{
         echo '<div class="section main">
@@ -25,7 +25,7 @@ stuse::template('header');
                     </div>
                 </div>
                 <div class="report-selection" id="normal">
-                        <form action="/report/view.php" method="get">
+                        <form action="' . APP_URL . '/report/view.php" method="get">
                             <h1>Papar Laporan</h1>';
                                 $stmt = $pdo->prepare('SELECT id,name FROM locations');
                                 $stmt->execute();
@@ -42,7 +42,7 @@ stuse::template('header');
                         </form>
                 </div>
                 <div class="report-selection" id="pdf">
-                        <form action="/report/viewPDF.php" method="get">
+                        <form action="' . APP_URL . '/report/viewPDF.php" method="get">
                             <h1>Papar Laporan (PDF)</h1>';
                         $stmt = $pdo->prepare('SELECT id,name FROM locations');
                         $stmt->execute();

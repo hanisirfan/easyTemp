@@ -9,12 +9,12 @@ stuse::template('header');
     if(!isset($_SESSION['username'])){
         echo '<div class="login-status">
                 <p>SILA LOG MASUK</p>
-                <a href="/dashboard/user/login">LOG MASUK</a>
+                <a href="' . APP_URL . '/dashboard/user/login">LOG MASUK</a>
             </div>';
     }elseif(!isset($_SESSION['urole'])){
         echo '<div class="login-status">
             <p>ANDA TIADA AKSES PADA HALAMAN INI</p>
-            <a href="/">KEMBALI KE LAMAN UTAMA</a>
+            <a href="' . APP_URL . '">KEMBALI KE LAMAN UTAMA</a>
         </div>';
     }else{
         echo '<div class="section scan-page-index">
@@ -28,7 +28,7 @@ stuse::template('header');
             <div class="scan-back-btn">
                 <p>Kembali</p>
             </div>
-            <form action="/scan/verify.php" method="POST">
+            <form action="' . APP_URL .'/scan/verify.php" method="POST">
                 <h1>Manual</h1>
                 <input type="text" name="identification" id="identification" inputmode="numeric" required>
                 <div class="location-status">
@@ -52,7 +52,7 @@ stuse::template('header');
             </form>
         </div>
         <div class="scan-barcode">
-            <form action="/scan/verify.php" method="POST" id="barcode-form">
+            <form action="' . APP_URL . '/scan/verify.php" method="POST" id="barcode-form">
                 <div class="location-status">
                         <!-- Will loop through all available locations from DB-->
             ';

@@ -10,12 +10,12 @@ stuse::template('header');
 if(!isset($_SESSION['username'])){
         echo '<div class="login-status">
                     <p>SILA LOG MASUK</p>
-                    <a href="/dashboard/user/login">LOG MASUK</a>
+                    <a href="' . APP_URL .'/dashboard/user/login">LOG MASUK</a>
                 </div>';
     }elseif(!isset($_SESSION['urole'])){
         echo '<div class="login-status">
             <p>ANDA TIADA AKSES PADA HALAMAN INI</p>
-            <a href="/">KEMBALI KE LAMAN UTAMA</a>
+            <a href="' . APP_URL . '">KEMBALI KE LAMAN UTAMA</a>
         </div>';
     }else{
         echo '<div class="section scan-success">

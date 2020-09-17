@@ -33,12 +33,12 @@ session_start();
                 <?php
                     if(!isset($_SESSION['username'])){
                         echo '<div class="user-logged-out">
-                                <a href="/dashboard/user/login">LOG MASUK</a>
+                                <a href="' . APP_URL .'/dashboard/user/login">LOG MASUK</a>
                             </div>';
                     }elseif(isset($_SESSION['username'])){
                         echo '<div class="user-logged-in">
                         <p>LOG MASUK SEBAGAI: <strong>' . $_SESSION['username'] .  '</strong></p>
-                            <form action="/includes/dashboard-handler.php" method="POST">
+                            <form action="' . APP_URL . '/includes/dashboard-handler.php" method="POST">
                                 <input type="hidden" name="type" value="user" class="dashboard-input">
                                 <input type="hidden" name="logout" class="dashboard-input">
                                 <button type="submit" name="submit">LOG KELUAR</button>
