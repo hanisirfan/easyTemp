@@ -1,5 +1,6 @@
 ﻿[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)]
 # This project is still under development.
+### I've actually forgot the database schema for this system so RIP.
     Todo: 
     - Make installation script.
     - Better UI especially for desktop experience.
